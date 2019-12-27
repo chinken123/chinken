@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script>
+	//main
+	function fizzbuzz(n)
+	{
+		//计算
+		list = calc(n);
+		//打印
+		println(list);
+	}
+	//计算
+	function calc(n){
+		var ret_v = new Array();
+		//循环n
+		for (i=1;i<=n ; i++)
+		{
+			//i被15整除
+			if (isDivisibl(i,15))
+			{
+				ret_v[i] = "fizz buzz";
+			} 
+			//i被3整除
+			else if (isDivisibl(i,3))
+			{
+				ret_v[i] = "fizz";
+			}
+			//i被3整除
+			else if (isDivisibl(i,5))
+			{
+				ret_v[i] = "buzz";
+			}
+			//其他
+			else
+			{
+				ret_v[i] = i;
+			}
+		}
+		return ret_v;
+	}
+
+	function isDivisibl(dividend, divisor)
+	{
+		 return dividend % divisor === 0;
+	}
+	function println (list) 
+	{
+		n = list.length;
+		for (i=1;i<n ; i++) 
+		{
+		document.write(list[i]+'<br>');
+		}
+
+	}
+
+  </script>
+
+ </head>
+ <body>
+	<input id='val' onBlur='fizzbuzz(this.value)'/>
+ </body>
+</html>
